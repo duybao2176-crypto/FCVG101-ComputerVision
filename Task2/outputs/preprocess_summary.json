@@ -1,0 +1,119 @@
+{
+  "cleaning_report": {
+    "n_input": 1200,
+    "n_output": 1193,
+    "removed_by_reason": {
+      "duplicate": 7
+    },
+    "n_grayscale_kept": 0,
+    "min_size": 32,
+    "class_counts_before": {
+      "fresh_apple": 200,
+      "fresh_banana": 200,
+      "fresh_orange": 200,
+      "rotten_apple": 200,
+      "rotten_banana": 200,
+      "rotten_orange": 200
+    },
+    "class_counts_after": {
+      "fresh_apple": 200,
+      "fresh_banana": 200,
+      "fresh_orange": 193,
+      "rotten_apple": 200,
+      "rotten_banana": 200,
+      "rotten_orange": 200
+    },
+    "imbalance_ratio_after": 1.036
+  },
+  "removed_files_first_50": [
+    {
+      "path": "C:\\Users\\admin\\Desktop\\FundementalOfComputerVision\\FCVG101_Coursework\\Task2\\data\\raw\\Original Image\\FreshOrange\\FreshOrange (62).jpg",
+      "reason": "duplicate"
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\FundementalOfComputerVision\\FCVG101_Coursework\\Task2\\data\\raw\\Original Image\\FreshOrange\\FreshOrange (63).jpg",
+      "reason": "duplicate"
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\FundementalOfComputerVision\\FCVG101_Coursework\\Task2\\data\\raw\\Original Image\\FreshOrange\\FreshOrange (77).jpg",
+      "reason": "duplicate"
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\FundementalOfComputerVision\\FCVG101_Coursework\\Task2\\data\\raw\\Original Image\\FreshOrange\\FreshOrange (78).jpg",
+      "reason": "duplicate"
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\FundementalOfComputerVision\\FCVG101_Coursework\\Task2\\data\\raw\\Original Image\\FreshOrange\\FreshOrange (79).jpg",
+      "reason": "duplicate"
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\FundementalOfComputerVision\\FCVG101_Coursework\\Task2\\data\\raw\\Original Image\\FreshOrange\\FreshOrange (87).jpg",
+      "reason": "duplicate"
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\FundementalOfComputerVision\\FCVG101_Coursework\\Task2\\data\\raw\\Original Image\\FreshOrange\\FreshOrange (88).jpg",
+      "reason": "duplicate"
+    }
+  ],
+  "split_sizes": {
+    "train": 870,
+    "val": 170,
+    "test": 153
+  },
+  "used_provided_test_folder": false,
+  "leakage_check": {
+    "path: train & val": 0,
+    "path: train & test": 0,
+    "path: val & test": 0,
+    "md5: train & val": 0,
+    "md5: train & test": 0,
+    "md5: val & test": 0,
+    "near-duplicate pairs across splits (hash distance <= 10)": 0
+  },
+  "plain_random_split_near_duplicate_pairs": 72,
+  "images_in_near_duplicate_groups": 181,
+  "largest_near_duplicate_group": 24,
+  "near_duplicate_pairs_by_threshold": {
+    "grouped split (used)": {
+      "pairs across splits, <= 5 bits": 0,
+      "pairs across splits, <= 10 bits": 0,
+      "pairs across splits, <= 15 bits": 289
+    },
+    "plain random split": {
+      "pairs across splits, <= 5 bits": 4,
+      "pairs across splits, <= 10 bits": 72,
+      "pairs across splits, <= 15 bits": 479
+    }
+  },
+  "near_dup_max_hash_distance": 10,
+  "resize_cache": {
+    "short_side": 256,
+    "jpeg_quality": 95,
+    "raw_mb": 1134.0,
+    "processed_mb": 24.2
+  },
+  "class_names": [
+    "fresh_apple",
+    "fresh_banana",
+    "fresh_orange",
+    "rotten_apple",
+    "rotten_banana",
+    "rotten_orange"
+  ],
+  "class_weights": {
+    "fresh_apple": 0.9864,
+    "fresh_banana": 0.9932,
+    "fresh_orange": 1.0985,
+    "rotten_apple": 1.0211,
+    "rotten_banana": 0.9932,
+    "rotten_orange": 0.9236
+  },
+  "train_transforms": "Compose(\n    RandomResizedCrop(size=(224, 224), scale=(0.7, 1.0), ratio=(0.75, 1.3333), interpolation=bilinear, antialias=True)\n    RandomHorizontalFlip(p=0.5)\n    RandomRotation(degrees=[-20.0, 20.0], interpolation=nearest, expand=False, fill=0)\n    ColorJitter(brightness=(0.7, 1.3), contrast=(0.7, 1.3), saturation=(0.8, 1.2), hue=(-0.02, 0.02))\n    ToTensor()\n    AddGaussianNoise(std=0.03, p=0.3)\n    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))\n)",
+  "eval_transforms": "Compose(\n    Resize(size=256, interpolation=bilinear, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    ToTensor()\n    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))\n)",
+  "batch_shape": [
+    32,
+    3,
+    224,
+    224
+  ]
+}

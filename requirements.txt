@@ -1,0 +1,20 @@
+# Core (Task 1, Task 2, Task 3)
+numpy
+opencv-python
+scipy
+scikit-image
+scikit-learn
+matplotlib
+pandas
+seaborn
+Pillow
+torch
+torchvision
+jupyterlab
+nbconvert
+gradio
+
+# Only needed to rebuild the report (report/build_report.py, report/convert_to_pdf.py, report/capture_ui.py)
+python-docx
+pywin32; sys_platform == "win32"
+playwright

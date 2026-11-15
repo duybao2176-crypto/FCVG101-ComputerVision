@@ -1,0 +1,586 @@
+{
+  "task1_1_calibration": {
+    "description": "Camera calibration with cv2.calibrateCamera on the OpenCV sample chessboard (left*.jpg).",
+    "pattern_size_inner_corners": [
+      9,
+      6
+    ],
+    "square_size": "1 unit = 1 chessboard square (real size unknown)",
+    "image_size_wh": [
+      640,
+      480
+    ],
+    "num_images_used": 13,
+    "images_used": [
+      "left01.jpg",
+      "left02.jpg",
+      "left03.jpg",
+      "left04.jpg",
+      "left05.jpg",
+      "left06.jpg",
+      "left07.jpg",
+      "left08.jpg",
+      "left09.jpg",
+      "left11.jpg",
+      "left12.jpg",
+      "left13.jpg",
+      "left14.jpg"
+    ],
+    "K": [
+      [
+        536.0734531358814,
+        0.0,
+        342.370468272454
+      ],
+      [
+        0.0,
+        536.0163627416653,
+        235.53687064064323
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "fx": 536.0734531358814,
+    "fy": 536.0163627416653,
+    "cx": 342.370468272454,
+    "cy": 235.53687064064323,
+    "distortion_k1_k2_p1_p2_k3": [
+      -0.2650903945473765,
+      -0.04674220144446541,
+      0.0018330155215033114,
+      -0.000314691608354649,
+      0.2523122103950386
+    ],
+    "rms_reprojection_error_px": 0.4086947658872136,
+    "mean_reprojection_error_px": 0.234592460669004,
+    "per_image_error_px": {
+      "left01.jpg": 0.16991671919822693,
+      "left02.jpg": 0.8463291525840759,
+      "left03.jpg": 0.15911513566970825,
+      "left04.jpg": 0.1766263097524643,
+      "left05.jpg": 0.14120548963546753,
+      "left06.jpg": 0.16231374442577362,
+      "left07.jpg": 0.18801137804985046,
+      "left08.jpg": 0.21409989893436432,
+      "left09.jpg": 0.22216619551181793,
+      "left11.jpg": 0.15318243205547333,
+      "left12.jpg": 0.17754782736301422,
+      "left13.jpg": 0.28586268424987793,
+      "left14.jpg": 0.15332502126693726
+    },
+    "worst_image": "left02.jpg",
+    "manual_pinhole_vs_cv2_projectPoints_max_diff_px": 2.684744595171651e-05,
+    "distortion_shift_of_projected_corners_px": {
+      "mean": 2.531961814483924,
+      "max": 13.252356913147342
+    },
+    "undistort_demo_image": "left06.jpg",
+    "row_straightness_deviation_px": {
+      "before": 3.002284716881461,
+      "after": 0.16430339139030942
+    },
+    "images_vs_stability": [
+      {
+        "images used": 3,
+        "fx": 538.153,
+        "fy": 538.127,
+        "cx": 336.916,
+        "cy": 240.959,
+        "k1": -0.221,
+        "RMS (px)": 0.693
+      },
+      {
+        "images used": 4,
+        "fx": 537.142,
+        "fy": 536.856,
+        "cx": 336.918,
+        "cy": 238.457,
+        "k1": -0.246,
+        "RMS (px)": 0.613
+      },
+      {
+        "images used": 5,
+        "fx": 538.434,
+        "fy": 538.475,
+        "cx": 338.319,
+        "cy": 237.834,
+        "k1": -0.257,
+        "RMS (px)": 0.558
+      },
+      {
+        "images used": 8,
+        "fx": 538.661,
+        "fy": 538.967,
+        "cx": 340.248,
+        "cy": 236.764,
+        "k1": -0.286,
+        "RMS (px)": 0.468
+      },
+      {
+        "images used": 13,
+        "fx": 536.073,
+        "fy": 536.016,
+        "cx": 342.37,
+        "cy": 235.537,
+        "k1": -0.265,
+        "RMS (px)": 0.409
+      }
+    ],
+    "right_camera": {
+      "K": [
+        [
+          542.3549380105062,
+          0.0,
+          328.3242323754827
+        ],
+        [
+          0.0,
+          541.6151611694563,
+          246.94735038928116
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "distortion": [
+        -0.28054251055700996,
+        0.10432041810517977,
+        -0.0005581850943551208,
+        0.0013035811152261874,
+        -0.023717617072327172
+      ],
+      "rms": 0.45863633859429137,
+      "num_images": 13
+    }
+  },
+  "task1_2_filtering": {
+    "description": "Denoising of lena.jpg with synthetic noise; PSNR/SSIM against the clean image.",
+    "noise_settings": {
+      "gaussian": "sigma=25, seed=0",
+      "salt_pepper": "amount=5%, seed=0"
+    },
+    "filter_settings": {
+      "box": {
+        "ksize": 5
+      },
+      "gaussian": {
+        "ksize": 5,
+        "sigma": 1.0
+      },
+      "median": {
+        "ksize": 5
+      },
+      "bilateral": {
+        "d": 9,
+        "sigma_color": 75,
+        "sigma_space": 75
+      }
+    },
+    "metrics_table": [
+      {
+        "noise": "Gaussian noise (sigma=25)",
+        "filter": "none (noisy)",
+        "PSNR (dB)": 20.361,
+        "SSIM": 0.296
+      },
+      {
+        "noise": "Gaussian noise (sigma=25)",
+        "filter": "box",
+        "PSNR (dB)": 28.19,
+        "SSIM": 0.73
+      },
+      {
+        "noise": "Gaussian noise (sigma=25)",
+        "filter": "gaussian",
+        "PSNR (dB)": 28.94,
+        "SSIM": 0.703
+      },
+      {
+        "noise": "Gaussian noise (sigma=25)",
+        "filter": "median",
+        "PSNR (dB)": 28.071,
+        "SSIM": 0.685
+      },
+      {
+        "noise": "Gaussian noise (sigma=25)",
+        "filter": "bilateral",
+        "PSNR (dB)": 29.099,
+        "SSIM": 0.703
+      },
+      {
+        "noise": "Salt & pepper (5%)",
+        "filter": "none (noisy)",
+        "PSNR (dB)": 18.214,
+        "SSIM": 0.338
+      },
+      {
+        "noise": "Salt & pepper (5%)",
+        "filter": "box",
+        "PSNR (dB)": 27.207,
+        "SSIM": 0.685
+      },
+      {
+        "noise": "Salt & pepper (5%)",
+        "filter": "gaussian",
+        "PSNR (dB)": 27.204,
+        "SSIM": 0.647
+      },
+      {
+        "noise": "Salt & pepper (5%)",
+        "filter": "median",
+        "PSNR (dB)": 30.889,
+        "SSIM": 0.856
+      },
+      {
+        "noise": "Salt & pepper (5%)",
+        "filter": "bilateral",
+        "PSNR (dB)": 18.267,
+        "SSIM": 0.299
+      }
+    ],
+    "best_filter_per_noise": {
+      "Gaussian noise (sigma=25)": {
+        "filter": "bilateral",
+        "PSNR_dB": 29.099,
+        "SSIM": 0.703,
+        "best_by_SSIM": "box"
+      },
+      "Salt & pepper (5%)": {
+        "filter": "median",
+        "PSNR_dB": 30.889,
+        "SSIM": 0.856,
+        "best_by_SSIM": "median"
+      }
+    },
+    "sobel_magnitude": {
+      "min": 0.0,
+      "max": 713.2684936523438,
+      "mean": 49.06614685058594
+    },
+    "canny_edge_pixel_counts": {
+      "clean, thresholds 50/100": 28957,
+      "clean, thresholds 100/200": 15911,
+      "clean, thresholds 150/300": 10885,
+      "noisy, no blur (100/200)": 56373,
+      "noisy, blur sigma=1.5": 5199,
+      "noisy, blur sigma=3": 901
+    },
+    "convolution_from_scratch": [
+      {
+        "kernel": "box 5x5",
+        "max |ours - filter2D (float)|": 0.0,
+        "max |round(ours) - filter2D (uint8)|": 0.0
+      },
+      {
+        "kernel": "gaussian 5x5",
+        "max |ours - filter2D (float)|": 0.0,
+        "max |round(ours) - filter2D (uint8)|": 1.0
+      },
+      {
+        "kernel": "sobel x 3x3",
+        "max |ours - filter2D (float)|": 0.0,
+        "max |round(ours) - filter2D (uint8)|": 0.0
+      }
+    ],
+    "fft": {
+      "D0": 30,
+      "equivalent_spatial_sigma": 2.7162443621016807,
+      "gaussian_lowpass_vs_spatial_gaussian": {
+        "mean_abs_diff": 0.9083442687988281,
+        "max_abs_diff": 68.0,
+        "psnr_db": 37.814036707995314
+      },
+      "psnr_vs_original_db": {
+        "ideal_lowpass": 24.787405689472845,
+        "gaussian_lowpass": 26.30510491660918
+      },
+      "lowpass_denoising_table": [
+        {
+          "image": "noisy gray (Gaussian noise)",
+          "PSNR (dB)": 23.92
+        },
+        {
+          "image": "Gaussian low-pass D0=20",
+          "PSNR (dB)": 24.24
+        },
+        {
+          "image": "Gaussian low-pass D0=40",
+          "PSNR (dB)": 27.48
+        },
+        {
+          "image": "Gaussian low-pass D0=60",
+          "PSNR (dB)": 29.41
+        },
+        {
+          "image": "Gaussian low-pass D0=90",
+          "PSNR (dB)": 30.53
+        },
+        {
+          "image": "spatial Gaussian blur sigma=1.0",
+          "PSNR (dB)": 30.74
+        }
+      ]
+    }
+  },
+  "task1_3_features": {
+    "description": "Feature detection and matching between box.png (object) and box_in_scene.png (scene).",
+    "harris": {
+      "corners_from_scratch": 536,
+      "corners_opencv": 620,
+      "fraction_ours_within_3px_of_opencv": 0.9757462686567164,
+      "fraction_opencv_within_3px_of_ours": 0.9548387096774194,
+      "response_map_correlation": 0.9510053415780088,
+      "params": "k=0.04, window=3, threshold=1% of max, 3x3 NMS"
+    },
+    "ratio_threshold": 0.75,
+    "sift_orb_table": [
+      {
+        "method": "SIFT",
+        "matching": "ratio test 0.75",
+        "keypoints box": 604,
+        "keypoints scene": 969,
+        "matches": 80,
+        "RANSAC inliers": 75,
+        "inlier ratio": 0.938,
+        "time (ms)": 31.5
+      },
+      {
+        "method": "SIFT",
+        "matching": "no ratio (cross-check)",
+        "keypoints box": 604,
+        "keypoints scene": 969,
+        "matches": 260,
+        "RANSAC inliers": 88,
+        "inlier ratio": 0.338,
+        "time (ms)": null
+      },
+      {
+        "method": "ORB",
+        "matching": "ratio test 0.75",
+        "keypoints box": 1252,
+        "keypoints scene": 1500,
+        "matches": 46,
+        "RANSAC inliers": 43,
+        "inlier ratio": 0.935,
+        "time (ms)": 9.7
+      },
+      {
+        "method": "ORB",
+        "matching": "no ratio (cross-check)",
+        "keypoints box": 1252,
+        "keypoints scene": 1500,
+        "matches": 396,
+        "RANSAC inliers": 53,
+        "inlier ratio": 0.134,
+        "time (ms)": null
+      }
+    ],
+    "box_corners_in_scene_sift": [
+      [
+        118.84465026855469,
+        160.919189453125
+      ],
+      [
+        284.7063903808594,
+        175.1328887939453
+      ],
+      [
+        267.979248046875,
+        298.6336364746094
+      ],
+      [
+        89.45050048828125,
+        272.6221008300781
+      ]
+    ],
+    "homography_sift": [
+      [
+        0.4424776205657461,
+        -0.16324290642376474,
+        118.84464786891634
+      ],
+      [
+        0.001153642449465987,
+        0.4051174664661533,
+        160.9191959772275
+      ],
+      [
+        -0.00024390494714160703,
+        -0.00035137422716103,
+        1.0
+      ]
+    ],
+    "homography_orb": [
+      [
+        0.44425144596189015,
+        -0.13701656463539486,
+        117.36830843884438
+      ],
+      [
+        -0.00462134718247744,
+        0.4383304245399189,
+        160.508368191123
+      ],
+      [
+        -0.00028803099748971126,
+        -0.00020656089328538563,
+        1.0
+      ]
+    ],
+    "ratio_sweep": [
+      {
+        "method": "SIFT",
+        "ratio": 0.5,
+        "good_matches": 43,
+        "inliers": 43,
+        "inlier_ratio": 1.0
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.55,
+        "good_matches": 54,
+        "inliers": 53,
+        "inlier_ratio": 0.981
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.6,
+        "good_matches": 60,
+        "inliers": 59,
+        "inlier_ratio": 0.983
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.65,
+        "good_matches": 71,
+        "inliers": 69,
+        "inlier_ratio": 0.972
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.7,
+        "good_matches": 73,
+        "inliers": 71,
+        "inlier_ratio": 0.973
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.75,
+        "good_matches": 80,
+        "inliers": 75,
+        "inlier_ratio": 0.938
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.8,
+        "good_matches": 94,
+        "inliers": 79,
+        "inlier_ratio": 0.84
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.85,
+        "good_matches": 126,
+        "inliers": 85,
+        "inlier_ratio": 0.675
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.9,
+        "good_matches": 174,
+        "inliers": 87,
+        "inlier_ratio": 0.5
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.95,
+        "good_matches": 286,
+        "inliers": 90,
+        "inlier_ratio": 0.315
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.5,
+        "good_matches": 3,
+        "inliers": 0,
+        "inlier_ratio": 0.0
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.55,
+        "good_matches": 6,
+        "inliers": 6,
+        "inlier_ratio": 1.0
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.6,
+        "good_matches": 15,
+        "inliers": 15,
+        "inlier_ratio": 1.0
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.65,
+        "good_matches": 25,
+        "inliers": 25,
+        "inlier_ratio": 1.0
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.7,
+        "good_matches": 33,
+        "inliers": 32,
+        "inlier_ratio": 0.97
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.75,
+        "good_matches": 46,
+        "inliers": 43,
+        "inlier_ratio": 0.935
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.8,
+        "good_matches": 65,
+        "inliers": 51,
+        "inlier_ratio": 0.785
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.85,
+        "good_matches": 111,
+        "inliers": 67,
+        "inlier_ratio": 0.604
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.9,
+        "good_matches": 212,
+        "inliers": 78,
+        "inlier_ratio": 0.368
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.95,
+        "good_matches": 522,
+        "inliers": 97,
+        "inlier_ratio": 0.186
+      }
+    ]
+  },
+  "_about": {
+    "file": "All key numbers of Task 1, one section per notebook (written by the notebooks).",
+    "task1_1_calibration": "Notebook 01: camera calibration (K, distortion, reprojection errors, undistortion).",
+    "task1_2_filtering": "Notebook 02: noise, denoising filters (PSNR dB / SSIM), gradients, Canny, FFT, from-scratch convolution.",
+    "task1_3_features": "Notebook 03: Harris, SIFT/ORB keypoints, ratio-test matching, RANSAC homography.",
+    "units": "pixels unless a key says dB; the chessboard unit is one square (real size unknown).",
+    "figures": "PNG figures with the same topic are in this folder (calib_*.png, denoise_*.png, gradients.png, canny.png, fft_filtering.png, harris_compare.png, matches_*.png, box_localization.png, ratio_sweep.png)."
+  }
+}

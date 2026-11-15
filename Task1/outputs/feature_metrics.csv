@@ -1,0 +1,5 @@
+method,matching,keypoints box,keypoints scene,matches,RANSAC inliers,inlier ratio,time (ms)
+SIFT,ratio test 0.75,604,969,80,75,0.938,31.5
+SIFT,no ratio (cross-check),604,969,260,88,0.338,
+ORB,ratio test 0.75,1252,1500,46,43,0.935,9.7
+ORB,no ratio (cross-check),1252,1500,396,53,0.134,

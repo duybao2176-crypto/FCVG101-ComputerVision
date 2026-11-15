@@ -1,0 +1,28 @@
+{
+  "class_names": [
+    "fresh_apple",
+    "fresh_banana",
+    "fresh_orange",
+    "rotten_apple",
+    "rotten_banana",
+    "rotten_orange"
+  ],
+  "num_classes": 6,
+  "architecture": "resnet18",
+  "pretrained": true,
+  "dropout": 0.2,
+  "img_size": 224,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "best_epoch": 6,
+  "best_val_acc": 0.9941176470588236,
+  "epochs_run": 8
+}

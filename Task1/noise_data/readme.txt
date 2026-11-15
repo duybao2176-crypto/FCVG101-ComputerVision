@@ -1,0 +1,2 @@
+đây là data mình collect dành cho bài toán de-noise, data mình lấy từ https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/lena.jpg
+bạn hãy dung thông tin này để viết report hoặc comment nhé

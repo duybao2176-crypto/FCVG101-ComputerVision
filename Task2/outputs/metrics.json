@@ -1,0 +1,132 @@
+{
+  "n_test_images": 153,
+  "accuracy": 0.9869,
+  "macro_f1": 0.9854,
+  "fruit_type_accuracy": 1.0,
+  "fresh_vs_rotten_accuracy": 0.9869,
+  "rotten_recall": 0.974,
+  "rotten_predicted_as_fresh": 2,
+  "n_mistakes": 2,
+  "per_class": {
+    "fresh_apple": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 26.0
+    },
+    "fresh_banana": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 26.0
+    },
+    "fresh_orange": {
+      "precision": 0.9231,
+      "recall": 1.0,
+      "f1-score": 0.96,
+      "support": 24.0
+    },
+    "rotten_apple": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 28.0
+    },
+    "rotten_banana": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 27.0
+    },
+    "rotten_orange": {
+      "precision": 1.0,
+      "recall": 0.9091,
+      "f1-score": 0.9524,
+      "support": 22.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      26,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      26,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      24,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      28,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      27,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      20
+    ]
+  ],
+  "class_names": [
+    "fresh_apple",
+    "fresh_banana",
+    "fresh_orange",
+    "rotten_apple",
+    "rotten_banana",
+    "rotten_orange"
+  ],
+  "accuracy_ci95": [
+    0.9673,
+    1.0
+  ],
+  "fruit_type_accuracy_ci95": [
+    1.0,
+    1.0
+  ],
+  "fresh_vs_rotten_accuracy_ci95": [
+    0.9673,
+    1.0
+  ],
+  "near_duplicate_check": {
+    "n_closer_half": 85,
+    "n_farther_half": 68,
+    "acc_closer_half": 0.9765,
+    "acc_farther_half": 1.0,
+    "nearest_distance_bits_min_median_max": [
+      11,
+      20.0,
+      94
+    ]
+  },
+  "ms_per_image": 5.26,
+  "ms_per_image_full_size_photo": 61.73,
+  "device": "cuda:0"
+}

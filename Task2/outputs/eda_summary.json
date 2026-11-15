@@ -1,0 +1,68 @@
+{
+  "n_images": 1200,
+  "class_names": [
+    "fresh_apple",
+    "fresh_banana",
+    "fresh_orange",
+    "rotten_apple",
+    "rotten_banana",
+    "rotten_orange"
+  ],
+  "class_counts": {
+    "fresh_apple": 200,
+    "fresh_banana": 200,
+    "fresh_orange": 200,
+    "rotten_apple": 200,
+    "rotten_banana": 200,
+    "rotten_orange": 200
+  },
+  "source_split_counts": {
+    "none": 1200
+  },
+  "imbalance_ratio": 1.0,
+  "n_corrupt": 0,
+  "n_too_small": 0,
+  "n_extra_duplicate_copies": 7,
+  "n_exif_rotated": 0,
+  "raw_size_gb": 1.129,
+  "megapixels_min_median_max": [
+    0.21,
+    6.56,
+    12.98
+  ],
+  "aspect_ratio_min_median_max": [
+    0.57,
+    1.07,
+    2.52
+  ],
+  "colour_modes": {
+    "RGB": 1200
+  },
+  "file_formats": {
+    ".jpg": 1200
+  },
+  "width_min_median_max": [
+    469,
+    2720,
+    4160
+  ],
+  "height_min_median_max": [
+    446,
+    2433,
+    4160
+  ],
+  "mean_by_freshness": {
+    "fresh": {
+      "mean_hue": 29.7,
+      "mean_sat": 0.365,
+      "mean_val": 0.757,
+      "brightness": 164.053
+    },
+    "rotten": {
+      "mean_hue": 17.552,
+      "mean_sat": 0.275,
+      "mean_val": 0.737,
+      "brightness": 165.992
+    }
+  }
+}

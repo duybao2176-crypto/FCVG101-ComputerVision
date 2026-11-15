@@ -1,0 +1,3 @@
+,parameters,best_val_acc,test_acc,sec_per_epoch
+ResNet18 (pretrained),11179590.0,0.9941,0.9869,7.6408
+SimpleCNN (scratch),390918.0,0.8647,0.8889,6.9428

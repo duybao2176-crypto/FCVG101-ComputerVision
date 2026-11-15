@@ -1,0 +1,11 @@
+noise,filter,PSNR (dB),SSIM
+Gaussian noise (sigma=25),none (noisy),20.361,0.296
+Gaussian noise (sigma=25),box,28.19,0.73
+Gaussian noise (sigma=25),gaussian,28.94,0.703
+Gaussian noise (sigma=25),median,28.071,0.685
+Gaussian noise (sigma=25),bilateral,29.099,0.703
+Salt & pepper (5%),none (noisy),18.214,0.338
+Salt & pepper (5%),box,27.207,0.685
+Salt & pepper (5%),gaussian,27.204,0.647
+Salt & pepper (5%),median,30.889,0.856
+Salt & pepper (5%),bilateral,18.267,0.299
