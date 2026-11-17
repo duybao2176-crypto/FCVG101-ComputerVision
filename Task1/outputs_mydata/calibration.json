@@ -1,0 +1,59 @@
+{
+  "image_size_wh": [
+    1280,
+    960
+  ],
+  "camera_matrix": [
+    [
+      1043.231380391275,
+      0.0,
+      633.8688467509762
+    ],
+    [
+      0.0,
+      1043.2796859620025,
+      483.7101901986985
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "fx": 1043.231380391275,
+  "fy": 1043.2796859620025,
+  "cx": 633.8688467509762,
+  "cy": 483.7101901986985,
+  "distortion_coefficients": {
+    "k1": 0.2513876363482021,
+    "k2": -2.238982407734075,
+    "p1": 0.0009178341663396637,
+    "p2": 0.0009318868277825458,
+    "k3": 6.024041138784867
+  },
+  "rms_reprojection_error_px": 0.31154622645378716,
+  "mean_reprojection_error_px": 0.2797934224208196,
+  "num_images_used": 15,
+  "pattern_size_inner_corners": [
+    9,
+    6
+  ],
+  "square_size_units": 17.5,
+  "calibration_images": [
+    "board_01.jpg",
+    "board_02.jpg",
+    "board_03.jpg",
+    "board_04.jpg",
+    "board_05.jpg",
+    "board_06.jpg",
+    "board_07.jpg",
+    "board_08.jpg",
+    "board_09.jpg",
+    "board_10.jpg",
+    "board_11.jpg",
+    "board_12.jpg",
+    "board_13.jpg",
+    "board_14.jpg",
+    "board_15.jpg"
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "task1_1_calibration": {
+    "description": "Camera calibration with cv2.calibrateCamera on my own phone photos (board_*.jpg).",
+    "pattern_size_inner_corners": [
+      9,
+      6
+    ],
+    "square_size": "17.5 mm (measured)",
+    "image_size_wh": [
+      1280,
+      960
+    ],
+    "num_images_used": 15,
+    "images_used": [
+      "board_01.jpg",
+      "board_02.jpg",
+      "board_03.jpg",
+      "board_04.jpg",
+      "board_05.jpg",
+      "board_06.jpg",
+      "board_07.jpg",
+      "board_08.jpg",
+      "board_09.jpg",
+      "board_10.jpg",
+      "board_11.jpg",
+      "board_12.jpg",
+      "board_13.jpg",
+      "board_14.jpg",
+      "board_15.jpg"
+    ],
+    "K": [
+      [
+        1043.231380391275,
+        0.0,
+        633.8688467509762
+      ],
+      [
+        0.0,
+        1043.2796859620025,
+        483.7101901986985
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "fx": 1043.231380391275,
+    "fy": 1043.2796859620025,
+    "cx": 633.8688467509762,
+    "cy": 483.7101901986985,
+    "distortion_k1_k2_p1_p2_k3": [
+      0.2513876363482021,
+      -2.238982407734075,
+      0.0009178341663396637,
+      0.0009318868277825458,
+      6.024041138784867
+    ],
+    "rms_reprojection_error_px": 0.31154622645378716,
+    "mean_reprojection_error_px": 0.2797934224208196,
+    "per_image_error_px": {
+      "board_01.jpg": 0.3137732148170471,
+      "board_02.jpg": 0.3412790596485138,
+      "board_03.jpg": 0.30879083275794983,
+      "board_04.jpg": 0.2866322994232178,
+      "board_05.jpg": 0.31030747294425964,
+      "board_06.jpg": 0.26283782720565796,
+      "board_07.jpg": 0.27340471744537354,
+      "board_08.jpg": 0.26035475730895996,
+      "board_09.jpg": 0.25530144572257996,
+      "board_10.jpg": 0.2574162185192108,
+      "board_11.jpg": 0.3054513931274414,
+      "board_12.jpg": 0.24981346726417542,
+      "board_13.jpg": 0.28183385729789734,
+      "board_14.jpg": 0.24086926877498627,
+      "board_15.jpg": 0.2488355040550232
+    },
+    "worst_image": "board_02.jpg",
+    "manual_pinhole_vs_cv2_projectPoints_max_diff_px": 3.0147165375637996e-05,
+    "distortion_shift_of_projected_corners_px": {
+      "mean": 1.8247357021201809,
+      "max": 3.628525663169919
+    },
+    "undistort_demo_image": "board_04.jpg",
+    "row_straightness_deviation_px": {
+      "before": 0.5670099930484663,
+      "after": 0.26156911376751857
+    },
+    "images_vs_stability": [
+      {
+        "images used": 3,
+        "fx": 817.843,
+        "fy": 817.339,
+        "cx": 616.669,
+        "cy": 474.129,
+        "k1": 0.158,
+        "RMS (px)": 0.337
+      },
+      {
+        "images used": 5,
+        "fx": 904.645,
+        "fy": 903.807,
+        "cx": 614.288,
+        "cy": 483.243,
+        "k1": 0.188,
+        "RMS (px)": 0.333
+      },
+      {
+        "images used": 8,
+        "fx": 929.303,
+        "fy": 928.631,
+        "cx": 617.248,
+        "cy": 484.093,
+        "k1": 0.194,
+        "RMS (px)": 0.319
+      },
+      {
+        "images used": 11,
+        "fx": 1025.457,
+        "fy": 1025.574,
+        "cx": 632.86,
+        "cy": 482.318,
+        "k1": 0.24,
+        "RMS (px)": 0.32
+      },
+      {
+        "images used": 15,
+        "fx": 1043.231,
+        "fy": 1043.28,
+        "cx": 633.869,
+        "cy": 483.71,
+        "k1": 0.251,
+        "RMS (px)": 0.312
+      }
+    ]
+  },
+  "_about": {
+    "file": "All key numbers of Task 1, one section per notebook (written by the notebooks).",
+    "task1_1_calibration": "Notebook 01: camera calibration (K, distortion, reprojection errors, undistortion).",
+    "task1_2_filtering": "Notebook 02: noise, denoising filters (PSNR dB / SSIM), gradients, Canny, FFT, from-scratch convolution.",
+    "task1_3_features": "Notebook 03: Harris, SIFT/ORB keypoints, ratio-test matching, RANSAC homography.",
+    "units": "pixels unless a key says dB; the chessboard unit is one square (real size unknown).",
+    "figures": "PNG figures with the same topic are in this folder (calib_*.png, denoise_*.png, gradients.png, canny.png, fft_filtering.png, harris_compare.png, matches_*.png, box_localization.png, ratio_sweep.png)."
+  },
+  "task1_3_features": {
+    "description": "Feature detection and matching between my dictionary cover (object) and my table scene.",
+    "harris": {
+      "corners_from_scratch": 669,
+      "corners_opencv": 684,
+      "fraction_ours_within_3px_of_opencv": 0.9581464872944694,
+      "fraction_opencv_within_3px_of_ours": 0.9766081871345029,
+      "response_map_correlation": 0.9644942913094079,
+      "params": "k=0.04, window=3, threshold=1% of max, 3x3 NMS"
+    },
+    "ratio_threshold": 0.75,
+    "sift_orb_table": [
+      {
+        "method": "SIFT",
+        "matching": "ratio test 0.75",
+        "keypoints box": 1168,
+        "keypoints scene": 1612,
+        "matches": 420,
+        "RANSAC inliers": 381,
+        "inlier ratio": 0.907,
+        "time (ms)": 139.2
+      },
+      {
+        "method": "SIFT",
+        "matching": "no ratio (cross-check)",
+        "keypoints box": 1168,
+        "keypoints scene": 1612,
+        "matches": 594,
+        "RANSAC inliers": 406,
+        "inlier ratio": 0.684,
+        "time (ms)": null
+      },
+      {
+        "method": "ORB",
+        "matching": "ratio test 0.75",
+        "keypoints box": 1429,
+        "keypoints scene": 1500,
+        "matches": 273,
+        "RANSAC inliers": 255,
+        "inlier ratio": 0.934,
+        "time (ms)": 26.6
+      },
+      {
+        "method": "ORB",
+        "matching": "no ratio (cross-check)",
+        "keypoints box": 1429,
+        "keypoints scene": 1500,
+        "matches": 593,
+        "RANSAC inliers": 364,
+        "inlier ratio": 0.614,
+        "time (ms)": null
+      }
+    ],
+    "box_corners_in_scene_sift": [
+      [
+        276.8098449707031,
+        435.9122314453125
+      ],
+      [
+        502.7431945800781,
+        324.401123046875
+      ],
+      [
+        632.8529052734375,
+        641.2984619140625
+      ],
+      [
+        438.0357971191406,
+        766.6675415039062
+      ]
+    ],
+    "homography_sift": [
+      [
+        0.8389115754633687,
+        0.46288777158753835,
+        276.8098313812271
+      ],
+      [
+        -0.26273641815599486,
+        0.9190686403987465,
+        435.91223229282775
+      ],
+      [
+        0.0002642895841093024,
+        0.0002314754849865133,
+        1.0
+      ]
+    ],
+    "homography_orb": [
+      [
+        0.8306278157649517,
+        0.46654021200651785,
+        276.90304673277666
+      ],
+      [
+        -0.27140612412393605,
+        0.9271527073180118,
+        435.37203053151313
+      ],
+      [
+        0.00024287506626213755,
+        0.000245099928406736,
+        1.0
+      ]
+    ],
+    "ratio_sweep": [
+      {
+        "method": "SIFT",
+        "ratio": 0.5,
+        "good_matches": 280,
+        "inliers": 276,
+        "inlier_ratio": 0.986
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.55,
+        "good_matches": 306,
+        "inliers": 299,
+        "inlier_ratio": 0.977
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.6,
+        "good_matches": 335,
+        "inliers": 324,
+        "inlier_ratio": 0.967
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.65,
+        "good_matches": 359,
+        "inliers": 346,
+        "inlier_ratio": 0.964
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.7,
+        "good_matches": 388,
+        "inliers": 366,
+        "inlier_ratio": 0.943
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.75,
+        "good_matches": 420,
+        "inliers": 381,
+        "inlier_ratio": 0.907
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.8,
+        "good_matches": 449,
+        "inliers": 388,
+        "inlier_ratio": 0.864
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.85,
+        "good_matches": 512,
+        "inliers": 401,
+        "inlier_ratio": 0.783
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.9,
+        "good_matches": 611,
+        "inliers": 408,
+        "inlier_ratio": 0.668
+      },
+      {
+        "method": "SIFT",
+        "ratio": 0.95,
+        "good_matches": 790,
+        "inliers": 421,
+        "inlier_ratio": 0.533
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.5,
+        "good_matches": 70,
+        "inliers": 70,
+        "inlier_ratio": 1.0
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.55,
+        "good_matches": 100,
+        "inliers": 100,
+        "inlier_ratio": 1.0
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.6,
+        "good_matches": 138,
+        "inliers": 135,
+        "inlier_ratio": 0.978
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.65,
+        "good_matches": 181,
+        "inliers": 176,
+        "inlier_ratio": 0.972
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.7,
+        "good_matches": 219,
+        "inliers": 211,
+        "inlier_ratio": 0.963
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.75,
+        "good_matches": 273,
+        "inliers": 255,
+        "inlier_ratio": 0.934
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.8,
+        "good_matches": 330,
+        "inliers": 295,
+        "inlier_ratio": 0.894
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.85,
+        "good_matches": 411,
+        "inliers": 331,
+        "inlier_ratio": 0.805
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.9,
+        "good_matches": 558,
+        "inliers": 382,
+        "inlier_ratio": 0.685
+      },
+      {
+        "method": "ORB",
+        "ratio": 0.95,
+        "good_matches": 847,
+        "inliers": 438,
+        "inlier_ratio": 0.517
+      }
+    ]
+  },
+  "task1_3_control": {
+    "good_matches": 10,
+    "inliers": 4
+  }
+}
